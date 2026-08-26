@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                         "Segoe UI", sans-serif;
+            background: #f7f7f5;
+            color: #111;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6%;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #e8e8e8;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 90px 6% 70px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1;
+            letter-spacing: -4px;
+            max-width: 800px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            margin-top: 28px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+            max-width: 560px;
+        }
+
+        .search {
+            margin-top: 40px;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .search input {
+            width: 100%;
+            height: 58px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 0 25px;
+            font-size: 15px;
+            outline: none;
+            background: white;
+        }
+
+        .search input:focus {
+            border-color: #999;
+        }
+
+        /* CATEGORIES */
+
+        .section {
+            max-width: 1300px;
+            margin: auto;
+            padding: 30px 6% 80px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            letter-spacing: -1px;
+        }
+
+        .section-header a {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .categories {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category {
+            background: white;
+            border: 1px solid #e7e7e7;
+            padding: 13px 20px;
+            border-radius: 30px;
+            white-space: nowrap;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .category:hover {
+            background: #111;
+            color: white;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product {
+            cursor: pointer;
+        }
+
+        .product-image {
+            aspect-ratio: 1 / 1.15;
+            background: #e9e9e7;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product:hover img {
+            transform: scale(1.04);
+        }
+
+        .favorite {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .product-info {
+            padding: 15px 3px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .product-description {
+            color: #777;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .product-price {
+            margin-top: 9px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #ddd;
+            padding: 45px 6%;
+            color: #777;
+            font-size: 13px;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 65px;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .hero h1 {
+                font-size: 45px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .products {
+                gap: 12px;
+            }
+
+            .product-image {
+                border-radius: 14px;
+            }
+
+            .section {
+                padding-bottom: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        STORE
+    </div>
+
+    <div class="nav-links">
+        <a href="#">Keşfet</a>
+        <a href="#">Kategoriler</a>
+        <a href="#">Hakkımızda</a>
+    </div>
+
+    <div class="nav-actions">
+        <span class="icon">♡</span>
+        <span class="icon">🛒</span>
+    </div>
+
+</nav>
+
+
+<section class="hero">
+
+    <h1>
+        Beğeneceğiniz<br>
+        şeyleri keşfedin.
+    </h1>
+
+    <p>
+        Özenle seçilmiş ürünleri keşfedin.
+        Beğendiğiniz ürünü inceleyin, seçeneklerinizi belirleyin
+        ve mağazayla iletişime geçin.
+    </p>
+
+    <div class="search">
+        <input
+            type="text"
+            placeholder="Ürün veya kategori ara..."
+        >
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-header">
+
+        <h2>
+            Kategoriler
+        </h2>
+
+        <a href="#">
+            Tümünü gör
+        </a>
+
+    </div>
+
+    <div class="categories">
+
+        <div class="category">Yeni Gelenler</div>
+        <div class="category">Giyim</div>
+        <div class="category">Ev & Yaşam</div>
+        <div class="category">Aksesuar</div>
+        <div class="category">Elektronik</div>
+        <div class="category">Kozmetik</div>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-header">
+
+        <h2>
+            Öne Çıkanlar
+        </h2>
+
+        <a href="#">
+            Tüm ürünler
+        </a>
+
+    </div>
+
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <button class="favorite">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
+                    alt="Basic Tişört"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Basic Tişört
+                </div>
+
+                <div class="product-description">
+                    Minimal kesim · Pamuklu
+                </div>
+
+                <div class="product-price">
+                    ₺850
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <button class="favorite">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                    alt="Sneaker"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Urban Sneaker
+                </div>
+
+                <div class="product-description">
+                    Günlük kullanım · Unisex
+                </div>
+
+                <div class="product-price">
+                    ₺2.450
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <button class="favorite">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=800&q=80"
+                    alt="Keten Gömlek"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Keten Gömlek
+                </div>
+
+                <div class="product-description">
+                    Doğal keten · Oversize
+                </div>
+
+                <div class="product-price">
+                    ₺1.750
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <button class="favorite">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80"
+                    alt="Bakım Seti"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Günlük Bakım Seti
+                </div>
+
+                <div class="product-description">
+                    4 parçalı bakım seti
+                </div>
+
+                <div class="product-price">
+                    ₺1.200
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 STORE  
+    <br><br>
+    Ürünleri keşfedin. Mağazalarla iletişime geçin.
+
+</footer>
+
+
+</body>
+</html>
