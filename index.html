@@ -1,343 +1,502 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Cetinkaya Ahşap | Doğal ahşaptan işlevsel ürünler.">
 
     <title>Cetinkaya Ahşap</title>
 
-    <meta
-        name="description"
-        content="Cetinkaya Ahşap | Doğal, işlevsel ve dayanıklı ahşap ürünler."
-    >
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVIGATION ================= -->
 
-<header class="navbar">
+<header class="nav">
 
-    <a href="#" class="logo">
-        CETİNKAYA<span>AHŞAP</span>
+    <a href="#" class="brand">
+        <span class="brand-mark">C</span>
+        <span>
+            CETİNKAYA
+            <small>AHŞAP</small>
+        </span>
     </a>
 
-    <nav>
+    <nav class="desktop-nav">
+
         <a href="#urunler">Ürünler</a>
-        <a href="#kategoriler">Kategoriler</a>
-        <a href="#hakkimizda">Hakkımızda</a>
+
+        <a href="#koleksiyon">
+            Koleksiyon
+        </a>
+
+        <a href="#hikaye">
+            Hikâyemiz
+        </a>
+
     </nav>
 
-    <a href="#iletisim" class="contact-button">
+    <a href="#iletisim"
+       class="nav-contact">
         İletişim
     </a>
 
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
+
+<main>
 
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-copy">
 
-        <span class="eyebrow">
-            DOĞAL AHŞAP · İŞLEVSEL TASARIM
+        <span class="label">
+            CETİNKAYA AHŞAP
         </span>
 
         <h1>
-            Doğadan gelen<br>
-            <strong>iyi fikirler.</strong>
+            Ahşabın
+            <em>doğal</em>
+            hali.
         </h1>
 
         <p>
-            Bahçe, tarım ve günlük kullanım için
-            sade, dayanıklı ve işlevsel ahşap ürünler.
+            Günlük yaşam için tasarlanan,
+            sade ve işlevsel ahşap ürünler.
         </p>
 
-        <a href="#urunler" class="primary-button">
+        <a href="#urunler"
+           class="hero-button">
+
             Ürünleri keşfet
-            <span>→</span>
+
+            <span>↗</span>
+
         </a>
 
     </div>
 
-</section>
 
+    <div class="hero-visual">
 
-<!-- KATEGORİLER -->
+        <div class="hero-image">
 
-<section class="categories" id="kategoriler">
+            <img
+                src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1800&q=85"
+                alt="Bahçe ve ahşap ürünler">
 
-    <div class="section-heading">
+        </div>
 
-        <span class="eyebrow">
-            KEŞFET
-        </span>
+        <div class="hero-caption">
 
-        <h2>
-            İhtiyacınız olanı bulun.
-        </h2>
+            <span>
+                01
+            </span>
 
-    </div>
+            <span>
+                DOĞAL MALZEME
+            </span>
 
-
-    <div class="category-grid">
-
-        <button
-            class="category-card"
-            onclick="filterCategory('Kürekler')"
-        >
-
-            <div class="category-image shovel-image"></div>
-
-            <div class="category-info">
-
-                <h3>Kürekler</h3>
-
-                <span>
-                    Bahçe & tarım →
-                </span>
-
-            </div>
-
-        </button>
-
-
-        <button
-            class="category-card"
-            onclick="filterCategory('Masalar')"
-        >
-
-            <div class="category-image table-image"></div>
-
-            <div class="category-info">
-
-                <h3>Masalar</h3>
-
-                <span>
-                    Yaşam alanları →
-                </span>
-
-            </div>
-
-        </button>
-
-
-        <button
-            class="category-card"
-            onclick="filterCategory('Dolaplar')"
-        >
-
-            <div class="category-image cabinet-image"></div>
-
-            <div class="category-info">
-
-                <h3>Dolaplar</h3>
-
-                <span>
-                    Depolama →
-                </span>
-
-            </div>
-
-        </button>
-
-
-        <button
-            class="category-card"
-            onclick="filterCategory('Diğer')"
-        >
-
-            <div class="category-image other-image"></div>
-
-            <div class="category-info">
-
-                <h3>Ahşap Ürünler</h3>
-
-                <span>
-                    Daha fazlası →
-                </span>
-
-            </div>
-
-        </button>
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- ÜRÜNLER -->
+<!-- ================= INTRO ================= -->
 
-<section class="products-section" id="urunler">
+<section class="statement">
 
-    <div class="products-header">
+    <span class="label">
+        BİZİM YAKLAŞIMIMIZ
+    </span>
+
+    <h2>
+        Gösterişli olmak yerine
+        <span>iyi yapılmış</span>
+        ürünler.
+    </h2>
+
+    <p>
+        Ahşabın karakterini koruyor,
+        gereksiz detaylardan arındırılmış
+        işlevsel ürünler üretiyoruz.
+    </p>
+
+</section>
+
+
+<!-- ================= COLLECTION ================= -->
+
+<section class="collection"
+         id="koleksiyon">
+
+    <div class="section-top">
 
         <div>
 
-            <span class="eyebrow">
+            <span class="label">
                 KOLEKSİYON
             </span>
 
             <h2>
-                Ürünler
+                Ne arıyorsunuz?
             </h2>
 
         </div>
 
+        <span class="section-number">
+            04 KATEGORİ
+        </span>
 
-        <div class="search-box">
+    </div>
+
+
+    <div class="collection-grid">
+
+
+        <button
+            class="collection-card collection-large"
+            onclick="filterCategory('Kürekler')">
+
+            <img
+                src="https://images.unsplash.com/photo-1599685315640-1e3f5e4f0a95?auto=format&fit=crop&w=1200&q=85"
+                alt="Bahçe ürünleri">
+
+            <div class="collection-overlay">
+
+                <span>
+                    01
+                </span>
+
+                <h3>
+                    Kürekler
+                </h3>
+
+                <p>
+                    Bahçe & tarım
+                </p>
+
+                <strong>
+                    ↗
+                </strong>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="collection-card"
+            onclick="filterCategory('Masalar')">
+
+            <img
+                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
+                alt="Ahşap masa">
+
+            <div class="collection-overlay">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+                    Masalar
+                </h3>
+
+                <p>
+                    Yaşam alanları
+                </p>
+
+                <strong>
+                    ↗
+                </strong>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="collection-card"
+            onclick="filterCategory('Dolaplar')">
+
+            <img
+                src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1000&q=85"
+                alt="Ahşap dolap">
+
+            <div class="collection-overlay">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+                    Dolaplar
+                </h3>
+
+                <p>
+                    Depolama
+                </p>
+
+                <strong>
+                    ↗
+                </strong>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="collection-card"
+            onclick="filterCategory('Diğer')">
+
+            <div class="abstract-wood">
+
+                <div></div>
+
+                <div></div>
+
+                <div></div>
+
+            </div>
+
+            <div class="collection-overlay">
+
+                <span>
+                    04
+                </span>
+
+                <h3>
+                    Diğer ürünler
+                </h3>
+
+                <p>
+                    Atölyeden çıkanlar
+                </p>
+
+                <strong>
+                    ↗
+                </strong>
+
+            </div>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products"
+         id="urunler">
+
+    <div class="section-top">
+
+        <div>
+
+            <span class="label">
+                ÜRÜNLER
+            </span>
+
+            <h2>
+                Atölyeden
+                çıkanlar.
+            </h2>
+
+        </div>
+
+        <div class="search">
 
             <span>⌕</span>
 
             <input
-                type="text"
                 id="searchInput"
+                type="text"
                 placeholder="Ürün ara..."
-                oninput="searchProducts()"
-            >
+                oninput="searchProducts()">
 
         </div>
 
     </div>
 
-
-    <!-- FİLTRELER -->
 
     <div class="filters">
 
         <button
             class="filter active"
-            onclick="filterCategory('Tümü')"
-        >
+            onclick="filterCategory('Tümü')">
             Tümü
         </button>
 
         <button
             class="filter"
-            onclick="filterCategory('Kürekler')"
-        >
+            onclick="filterCategory('Kürekler')">
             Kürekler
         </button>
 
         <button
             class="filter"
-            onclick="filterCategory('Masalar')"
-        >
+            onclick="filterCategory('Masalar')">
             Masalar
         </button>
 
         <button
             class="filter"
-            onclick="filterCategory('Dolaplar')"
-        >
+            onclick="filterCategory('Dolaplar')">
             Dolaplar
         </button>
 
         <button
             class="filter"
-            onclick="filterCategory('Diğer')"
-        >
+            onclick="filterCategory('Diğer')">
             Diğer
         </button>
 
     </div>
 
 
-    <!-- ÜRÜN GRID -->
-
-    <div
-        class="product-grid"
-        id="productGrid"
-    ></div>
+    <div id="productGrid"
+         class="product-grid">
+    </div>
 
 </section>
 
 
-<!-- HAKKIMIZDA -->
+<!-- ================= STORY ================= -->
 
-<section class="about" id="hakkimizda">
+<section class="story"
+         id="hikaye">
 
-    <div class="about-content">
+    <div class="story-image">
 
-        <span class="eyebrow">
-            CETİNKAYA AHŞAP
+        <img
+            src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1400&q=85"
+            alt="Ahşap dokusu">
+
+    </div>
+
+    <div class="story-copy">
+
+        <span class="label">
+            MALZEME
         </span>
 
         <h2>
-            Sade ürünler.<br>
-            Gerçek kullanım.
+            Her ağacın
+            kendine ait
+            bir hikâyesi var.
         </h2>
 
         <p>
-            Günlük yaşamda ihtiyaç duyulan işlevsel ahşap
-            ürünleri sade ve dayanıklı bir anlayışla üretiyoruz.
+            Ahşabın damarlarını, rengini ve
+            doğal dokusunu saklamaya çalışmıyoruz.
+            Ürünün karakterini oluşturan şey
+            tam olarak bunlar.
         </p>
+
+        <a href="#iletisim">
+            Bizi tanıyın
+            <span>↗</span>
+        </a>
 
     </div>
 
 </section>
 
 
-<!-- İLETİŞİM -->
+<!-- ================= CONTACT ================= -->
 
-<section class="contact" id="iletisim">
+<section class="contact"
+         id="iletisim">
 
-    <span class="eyebrow">
+    <span class="label">
         İLETİŞİM
     </span>
 
     <h2>
-        Bir ürün mü<br>
-        beğendiniz?
+        Beğendiğiniz
+        bir ürün mü var?
     </h2>
 
     <p>
         Ürün hakkında bilgi almak için
-        bizimle iletişime geçebilirsiniz.
+        doğrudan bizimle iletişime geçebilirsiniz.
     </p>
 
-    <div class="contact-buttons">
+    <div class="contact-actions">
 
-        <a
-            href="tel:+905000000000"
-            class="primary-button"
-        >
-            Telefonla ara
+        <a href="tel:+905000000000">
+            <span>Telefon</span>
+            <strong>↗</strong>
         </a>
 
-        <a
-            href="https://wa.me/905000000000"
-            class="secondary-button"
-        >
-            WhatsApp
+        <a href="https://wa.me/905000000000">
+            <span>WhatsApp</span>
+            <strong>↗</strong>
+        </a>
+
+        <a href="#">
+            <span>Instagram</span>
+            <strong>↗</strong>
         </a>
 
     </div>
 
 </section>
 
+</main>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="logo">
-        CETİNKAYA<span>AHŞAP</span>
+    <div class="footer-brand">
+
+        <span class="brand-mark">
+            C
+        </span>
+
+        <div>
+            CETİNKAYA
+            <small>AHŞAP</small>
+        </div>
+
     </div>
 
-    <p>
+    <span>
         © 2026 Cetinkaya Ahşap
-    </p>
+    </span>
+
+    <span>
+        Doğal · Sade · İşlevsel
+    </span>
 
 </footer>
 
