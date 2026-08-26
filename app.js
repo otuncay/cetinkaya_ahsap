@@ -4,9 +4,10 @@ const supabaseClient = window.supabase.createClient(
 );
 
 console.log("Cetinkaya Ahşap uygulaması başlatıldı.");
+console.log("Supabase URL:", SUPABASE_URL);
+console.log("Key mevcut mu:", Boolean(SUPABASE_KEY));
 
 async function testSupabaseConnection() {
-
     const { data, error } = await supabaseClient
         .from("categories")
         .select("*")
